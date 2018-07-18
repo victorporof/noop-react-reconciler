@@ -11,14 +11,13 @@ specific language governing permissions and limitations under the License.
 
 /* eslint no-return-assign: "off", no-param-reassign: "off" */
 
-import RootNode from '../components/root-node';
 import Reconciler from '../reconciler';
 
 const SYMBOL = Symbol('React Reconciler Container');
 
 export default class Container {
   constructor() {
-    this._root = Reconciler.createContainer(new RootNode());
+    this._root = Reconciler.createContainer();
   }
 
   static for(parent) {

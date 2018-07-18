@@ -12,9 +12,7 @@ specific language governing permissions and limitations under the License.
 import Reconciler from 'react-reconciler';
 import now from 'performance-now';
 
-import NormalNode from '../components/normal-node';
-import InlineTextNode from '../components/inline-text-node';
-
+export const DUMMY_INSTANCE = Object.create(null);
 export const ROOT_HOST_CONTEXT = Object.create(null);
 export const CHILD_HOST_CONTEXT = Object.create(null);
 
@@ -44,12 +42,12 @@ export default Reconciler({
 
   createInstance(_type, _props, _rootContainerInstance, _hostContext, _internalInstanceHandle) {
     // console.log('createInstance', type, props, rootContainerInstance, _hostContext, _internalInstanceHandle);
-    return new NormalNode();
+    return DUMMY_INSTANCE;
   },
 
   createTextInstance(_text, _rootContainerInstance, _hostContext, _internalInstanceHandle) {
     // console.log('createTextInstance', text, rootContainerInstance, _hostContext, _internalInstanceHandle);
-    return new InlineTextNode();
+    return DUMMY_INSTANCE;
   },
 
   appendInitialChild(_parentInstance, _childInstance) {
