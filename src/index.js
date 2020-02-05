@@ -9,8 +9,14 @@ CONDITIONS OF ANY KIND, either express or implied. See the License for the
 specific language governing permissions and limitations under the License.
 */
 
-import * as Public from './public';
+import Container from './container';
 
-export default {
-  ...Public,
-};
+const SYMBOL = Symbol('React Reconciler Container');
+
+let container = (parent) => {
+  return parent[SYMBOL] ?? (parent[SYMBOL] = new Container());
+}
+
+export const render = (element, parent) => {
+  container(parent).render(element);
+}

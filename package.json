@@ -6,34 +6,30 @@
   "scripts": {
     "clean": "del dist",
     "serve": "yarn clean; webpack --config webpack/webpack.config-dev.babel.js --progress --watch",
+    "build:dev": "yarn clean; webpack --config webpack/webpack.config-dev.babel.js --progress",
     "build": "yarn clean; webpack --config webpack/webpack.config-prod.babel.js --progress"
   },
   "author": "Victor Porof <victor.porof@gmail.com>",
   "license": "MPL-2.0",
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "performance-now": "^2.1.0",
-    "react": "^16.4.1",
-    "react-reconciler": "^0.12.0"
+    "@babel/runtime": "^7.8.4",
+    "react": "^16.12.0",
+    "react-reconciler": "^0.24.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.5",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-register": "^6.26.0",
-    "del-cli": "^1.1.0",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^17.0.0",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.9.1",
-    "fs-extra": "^6.0.1",
-    "webpack": "^4.13.0",
-    "webpack-cli": "^3.0.8",
-    "webpack-node-externals": "^1.7.2"
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/register": "^7.8.3",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "del-cli": "^3.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "fs-extra": "^8.1.0",
+    "prettier": "^1.19.1",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   }
 }

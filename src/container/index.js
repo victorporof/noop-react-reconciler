@@ -9,19 +9,11 @@ CONDITIONS OF ANY KIND, either express or implied. See the License for the
 specific language governing permissions and limitations under the License.
 */
 
-/* eslint no-return-assign: "off", no-param-reassign: "off" */
-
-import Reconciler from '../reconciler';
-
-const SYMBOL = Symbol('React Reconciler Container');
+import Reconciler from '../renderer';
 
 export default class Container {
   constructor() {
     this._root = Reconciler.createContainer();
-  }
-
-  static for(parent) {
-    return parent[SYMBOL] || (() => parent[SYMBOL] = new Container())();
   }
 
   render(element) {

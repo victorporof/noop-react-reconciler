@@ -3,18 +3,17 @@
 
 import path from 'path';
 import fs from 'fs-extra';
-import nodeExternals from 'webpack-node-externals';
 
 const ENTRY = path.join(__dirname, '..', 'src', 'index.js');
 const OUTPUT = path.join(__dirname, '..', 'dist');
-const NODE_EXTERNALS = nodeExternals();
 
 export default () => ({
   entry: [ENTRY],
   output: {
     path: OUTPUT,
-    filename: 'index.js',
-    libraryTarget: 'umd',
+    filename: 'custom-react-dom.js',
+    library: 'ReactDOM',
+    libraryTarget: 'window',
   },
   resolve: {
     extensions: ['.js'],
@@ -32,6 +31,4 @@ export default () => ({
     }],
   },
   plugins: [],
-  target: 'node',
-  externals: [NODE_EXTERNALS],
 });
